@@ -1,0 +1,17 @@
+.summary-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+}
+
+.summary-number {
+  font-size: 48px;
+  color: #2563eb;
+  font-weight: bold;
+}
+.section{
+  padding: 30px;
+}

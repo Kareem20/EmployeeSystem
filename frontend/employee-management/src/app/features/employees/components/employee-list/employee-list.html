@@ -1,0 +1,40 @@
+<div id="list" class="section active-section">
+  <h2>Employee List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Job Title</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    @if (employees().length > 0) {
+      <tbody id="employeeTable">
+        @for (emp of employees(); track $index) {
+          <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.address }}</td>
+            <td>{{ emp.genderName }}</td>
+            <td>{{ emp.jobTitle }}</td>
+            <td>{{ emp.departmentName }}</td>
+            <td>{{ emp.salary }}</td>
+            <td>
+              <button class="edit-btn"  [routerLink]="['/employees/edit', emp.employeeId]">
+                Edit
+              </button>
+              <button class="delete-btn" (click)="confirmDelete(emp.employeeId, emp.name)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    }
+  </table>
+</div>

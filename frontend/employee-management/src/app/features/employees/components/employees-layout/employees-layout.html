@@ -1,0 +1,10 @@
+<div class="navbar">
+  <a routerLink="/employees" routerLinkActive="active"
+  [routerLinkActiveOptions]="{ exact: true }">Employee List</a>
+  <a routerLink="/employees/summary" routerLinkActive="active">Salary Summary</a>
+  <a routerLink="/employees/add" routerLinkActive="active">Add Employee</a>
+</div>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

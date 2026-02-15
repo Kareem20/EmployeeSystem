@@ -1,0 +1,98 @@
+/* Page Background */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* Card */
+.form-card {
+  background: #ffffff;
+  padding: 35px;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.form-title {
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #1e293b;
+  text-align: center;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+/* Inputs & Select */
+input,
+select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  background-color: #f9fafb;
+}
+
+/* Focus Effect */
+input:focus,
+select:focus {
+  border-color: #2563eb;
+  background-color: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.submit-btn:hover:not(:disabled) {
+  background-color: #1e40af;
+}
+
+/* Disabled State */
+.submit-btn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+.error {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+

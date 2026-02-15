@@ -1,0 +1,65 @@
+<div class="form-wrapper">
+  <div class="form-card">
+    <h2 class="form-title">{{ isEditableMode ? 'Update Employee' : 'Add New Employee' }}</h2>
+
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" formControlName="name" />
+      </div>
+
+      <div class="form-group">
+        <label>Address</label>
+        <input type="text" formControlName="address" />
+      </div>
+
+      <div class="form-group">
+        <label>Gender</label>
+        <select formControlName="genderId">
+          <option value="">Select Gender</option>
+          @for (gender of genders(); track gender.id) {
+            <option [value]="gender.id">
+              {{ gender.name }}
+            </option>
+          }
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Job Title</label>
+        <input type="text" formControlName="jobTitle" />
+      </div>
+
+      <div class="form-group">
+        <label>Department</label>
+        <select formControlName="departmentId">
+          <option value="">Select Department</option>
+          @for (dept of departments(); track dept.id) {
+            <option [value]="dept.id">
+              {{ dept.name }}
+            </option>
+          }
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Salary</label>
+        <input type="number" formControlName="salary" />
+
+        @if (employeeForm.get('salary')?.touched && employeeForm.get('salary')?.errors?.['min']) {
+          <small class="error"> Salary must be at least 100 </small>
+        }
+
+        @if (
+          employeeForm.get('salary')?.touched && employeeForm.get('salary')?.errors?.['required']
+        ) {
+          <small class="error"> Salary is required </small>
+        }
+      </div>
+
+      <button type="submit" class="submit-btn" [disabled]="loading || employeeForm.invalid">
+        {{ loading ? 'Saving...' : isEditableMode ? 'Update Employee' : 'Add Employee' }}
+      </button>
+    </form>
+  </div>
+</div>
